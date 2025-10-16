@@ -35,6 +35,9 @@ class GetCameraResResponse(BaseModel):
 	Degree: str
 	Result: str
 
+@app.get("/api/health")
+def health_check():
+    return {"status": "healthy"}
 
 @app.post("/api/getcamerares", response_model=GetCameraResResponse)
 async def get_camera_res(payload: GetCameraResRequest) -> GetCameraResResponse:
@@ -46,5 +49,7 @@ async def get_camera_res(payload: GetCameraResRequest) -> GetCameraResResponse:
 		Degree="3",
 		Result="Not found",
 	)
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 

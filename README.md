@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```powershell
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
-
+https://your-app.vercel.app/api/health - Health check
 ## Test Endpoints
 
 ### 1) Прибытие паллеты на ID точку
@@ -30,7 +30,7 @@ $body = @{ SSCC = "148102689000000010"; IDPoint = "ID1"; Message = "PalletOnID";
 Invoke-RestMethod -Method Post -Uri "http://localhost:8000/api/setpallet" -ContentType "application/json" -Body $body
 ```
 $body = @{ SSCC = "148102689000000010"; IDPoint = "ID1"; Message = "PalletOnID"; Weight = 123.45 } | ConvertTo-Json
-Invoke-RestMethod -Method Post -Uri "https://savvfastapi.vercel.app//api/setpallet" -ContentType "application/json" -Body $body
+Invoke-RestMethod -Method Post -Uri "https://savvfastapi.vercel.app/api/setpallet" -ContentType "application/json" -Body $body
 
 Expected response:
 ```json
