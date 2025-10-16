@@ -19,6 +19,7 @@ pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 https://your-app.vercel.app/api/health - Health check
+https://your-app.vercel.app/docs - FastAPI docs
 ## Test Endpoints
 
 ### 1) Прибытие паллеты на ID точку
