@@ -16,7 +16,10 @@ class SetPalletResponse(BaseModel):
 	Status: Literal["Ok"]
 
 
-app = FastAPI(title="Savv API", version="1.0.0")
+app = FastAPI(
+	title="Vercel + FastAPI",
+    description="Vercel + FastAPI",
+    version="1.0.0",	)
 
 
 @app.post("/api/setpallet", response_model=SetPalletResponse)
