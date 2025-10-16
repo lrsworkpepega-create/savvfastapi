@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Literal
+import uvicorn
 
 
 class SetPalletRequest(BaseModel):
@@ -50,6 +51,10 @@ async def get_camera_res(payload: GetCameraResRequest) -> GetCameraResResponse:
 		Result="Not found",
 	)
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+	uvicorn.run(
+		"main:app",
+		host="0.0.0.0",
+		port=8000,
+		reload=True
 
+	)
